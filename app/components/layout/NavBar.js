@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import classes from './mainNavigation.module.css';
+import classes from './navBar.module.css';
 
-function MainNavigation() {
+function NavBar() {
 
   return (
     <header className={classes.header}>
