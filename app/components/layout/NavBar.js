@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import classes from './navBar.module.css';
+import classes from './styling/navBar.module.css'
 
 function NavBar() {
 
@@ -9,10 +9,10 @@ function NavBar() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>All Hangouts</Link>
+            <Link href='/'>All Hangouts</Link>
           </li>
           <li>
-            <Link to='/new-hangout'>Add New Hangouts</Link>
+            <Link href='/new-hangout'>Add New Hangouts</Link>
           </li>
         </ul>
       </nav>
@@ -20,4 +20,4 @@ function NavBar() {
   );
 }
 
-export default MainNavigation;
+export default NavBar;

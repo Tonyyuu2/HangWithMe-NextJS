@@ -1,5 +1,5 @@
-import NavBar from './NavBar';
-import classes from './layout.module.css';
+import NavBar from "./NavBar";
+import classes from "./styling/layout.module.css";
 
 function Layout(props) {
   return (
