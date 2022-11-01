@@ -14,3 +14,14 @@ export default function HangoutDetail({ image, title, address, description }) {
     </section>
   );
 }
+
+
+export async function getStaticProps() {
+  return {
+    props:{
+      hangoutData: {
+        
+      }
+    }
+  }
+}
