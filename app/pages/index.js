@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import HangoutList from "../components/hangouts/HangoutList"
 
 import testImage from '../public/images/testimage.jpg'
@@ -34,9 +35,17 @@ const MOCK_DATA = [
 ]
 
 export default function Home() {
+
+  const [hangouts, setHangouts] = useState([])
+
+
+  useEffect(() => {
+    setHangouts(MOCK_DATA)
+  }, [])
+
   return (
     <div>
-      <HangoutList hangouts={MOCK_DATA}/>
+      <HangoutList hangouts={hangouts}/>
     </div>
   )
 }
