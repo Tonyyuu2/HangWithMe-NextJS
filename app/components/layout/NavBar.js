@@ -12,7 +12,7 @@ function NavBar() {
             <Link href='/'>All Hangouts</Link>
           </li>
           <li>
-            <Link href='/new-hangout'>Add New Hangouts</Link>
+            <Link href='/new-Hangout'>Add New Hangouts</Link>
           </li>
         </ul>
       </nav>

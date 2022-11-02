@@ -1,3 +1,5 @@
+import { MongoClient } from 'mongodb';
+
 import HangoutList from "../components/hangouts/HangoutList";
 
 import testImage from "../public/images/testimage.jpg";
@@ -42,6 +44,16 @@ export default function Home({ hangouts }) {
 }
 
 export async function getStaticProps() {
+
+  const client = await MongoClient.connect(`mongodb+srv://tonyyuu2:${process.env.DB_PASS}@cluster0.vdjd6hv.mongodb.net/hangwithme?retryWrites=true&w=majority`);
+    
+    const db = client.db();
+
+    const hangoutsCollection = db.collection('hangouts');
+
+    const hangouts = await hangoutsCollection.find().toArray();
+    console.log('hangouts :', hangouts);
+
   return {
     props: {
       hangouts: MOCK_DATA,
@@ -49,14 +61,3 @@ export async function getStaticProps() {
     revalidate: 10
   };
 }
-
-// export async function getServerSideProps(context) {
-//   const req = context.req;
-//   const res = context.res;
-
-//   return {
-//     props: {
-//       hangouts: MOCK_DATA
-//     }
-//   }
-// }
