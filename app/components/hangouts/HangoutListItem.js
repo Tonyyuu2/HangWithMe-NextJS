@@ -16,7 +16,7 @@ export default function HangoutListItem({ id, image, title, address }) {
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
-          <Image src={image} alt={title} priority/>
+          <Image src={image} alt={title} priority width={100} height={100}/>
         </div>
         <div className={classes.content}>
           <h3>{title}</h3>

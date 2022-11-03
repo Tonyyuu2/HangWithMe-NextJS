@@ -54,9 +54,16 @@ export async function getStaticProps() {
     const hangouts = await hangoutsCollection.find().toArray();
     console.log('hangouts :', hangouts);
 
+    client.close();
+
   return {
     props: {
-      hangouts: MOCK_DATA,
+      hangouts: hangouts.map(hangout => ({
+        title: hangout.title,
+        address: hangout.address,
+        image: hangout.image,
+        id: hangout._id.toString()
+      })),
     },
     revalidate: 10
   };
